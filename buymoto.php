@@ -5,14 +5,15 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php
-        include "includes/head.php";
+    include "includes/head.php";
     ?>
-    <title>Home</title>
+    <title>Comprar Motos</title>
 </head>
 <body>
 <?php
 include "includes/header.php";
 include "includes/navIndex.php";
+include "includes/navBuy.php";
 ?>
 <section></section>
 <?php
