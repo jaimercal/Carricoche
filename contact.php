@@ -7,14 +7,26 @@
     <?php
     include "includes/head.php";
     ?>
-    <title>Contactoyffugb</title>
+    <title>Contacto</title>
 </head>
 <body>
 <?php
 include "includes/header.php";
 include "includes/navIndex.php";
 ?>
-<section></section>
+<section>
+    <form class="" name="contactForm" action="controller/contactController.php" method="post" enctype="multipart/form-data">
+        <div class="">
+            <label for="contactEmail">Email:</label>
+            <input class="" id="" type="text" name="email">
+        </div>
+        <div class="">
+            <label for="contactCommentary">Comentario:</label>
+            <textarea name="commentary" class="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <button type="button" class="" id="" onclick="">Enviar</button>
+    </form>
+</section>
 <?php
 include "includes/footer.php";
 ?>
