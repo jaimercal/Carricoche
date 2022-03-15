@@ -7,7 +7,7 @@
     <?php
     include "includes/head.php";
     ?>
-    <title>Contacto</title>
+    <title>Contactoyffugb</title>
 </head>
 <body>
 <?php
