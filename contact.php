@@ -24,7 +24,7 @@ include "includes/navIndex.php";
             <label for="contactCommentary">Comentario:</label>
             <textarea name="commentary" class="" id="" cols="30" rows="10"></textarea>
         </div>
-        <button type="button" class="" id="" onclick="">Enviar</button>
+        <button type="button" class="" id="" onclick="validate()">Enviar</button>
     </form>
 </section>
 <?php
