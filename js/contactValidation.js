@@ -12,13 +12,17 @@ function validateEmail(email){
 function validate(){
     let email = document.forms['contactForm']['email'].value;
     let commentary = document.forms['contactForm']['commentary'].value;
+    let valid = true;
 
     if(email==NULL || email==""){
-        return false;
+        valid = false;
     }else if(commentary==NULL || commentary==""){
-        return false;
+        valid = false;
     }else if(validateEmail(email)){
-        return false;
+        valid = false;
+    }
+    if(valid==true){
+        document.contactForm.submit();
     }
     
 }
