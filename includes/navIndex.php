@@ -7,7 +7,6 @@
         <div class="sell"><a href="sell.php">Vender</a></div>
         <div class="lastdays"><a href="lastdays.php">Últimos Días</a></div>
         <div class="maintenance"><a href="mainteinance.php">Mantenimiento de Vehículo</a></div>
-        <div class="accessories"><a href="accessories.php">Accesorios</a></div>
         <div class="contact"><a href="contact.php">Contacto</a></div>
     </div>
 </nav>
