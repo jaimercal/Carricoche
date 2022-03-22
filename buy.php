@@ -10,6 +10,7 @@
     <title>Comprar</title>
 </head>
 <body>
+dos por uno en burros a
 <?php
 include "includes/header.php";
 include "includes/navIndex.php";
