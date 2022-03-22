@@ -8,6 +8,7 @@ class ContactVal extends Contact{
     private $commentary;
 
     /**
+     * @author Jrc
      * @param $id
      * @param $email
      * @param $commentary
@@ -19,6 +20,7 @@ class ContactVal extends Contact{
     }
 
     /**
+     * @author Jrc
      * @return mixed|string
      */
     public function getId() {
@@ -26,6 +28,7 @@ class ContactVal extends Contact{
     }
 
     /**
+     * @author Jrc
      * @param mixed|string $id
      */
     public function setId($id) {
@@ -33,6 +36,7 @@ class ContactVal extends Contact{
     }
 
     /**
+     * @author Jrc
      * @return mixed|string
      */
     public function getEmail() {
@@ -40,6 +44,7 @@ class ContactVal extends Contact{
     }
 
     /**
+     * @author Jrc
      * @param mixed|string $email
      */
     public function setEmail($email) {
@@ -47,6 +52,7 @@ class ContactVal extends Contact{
     }
 
     /**
+     * @author Jrc
      * @return mixed|string
      */
     public function getCommentary() {
@@ -54,12 +60,17 @@ class ContactVal extends Contact{
     }
 
     /**
+     * @author Jrc
      * @param mixed|string $commentary
      */
     public function setCommentary($commentary) {
         $this->commentary = $commentary;
     }
 
+    /**
+     * @author Jrc
+     * @return bool
+     */
     public function invalidEmail(){
         if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
             $result = false;
@@ -69,12 +80,19 @@ class ContactVal extends Contact{
         return $result;
     }
 
+    /**
+     * @author Jrc
+     * @return void
+     */
     public function contactValidation(){
         if(empty($this->email)){
+            header("location: ../contact.php?error=emptyinput");
             exit();
         }else if(empty($this->commentary)){
+            header("location: ../contact.php?error=emptyinput");
             exit();
         }else if(!$this->invalidEmail()){
+            header("location: ../contact.php?error=invalidemail");
             exit();
         }
         $this->insert($this);

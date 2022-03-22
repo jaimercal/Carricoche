@@ -9,5 +9,5 @@ if(isset($_POST) && !empty($_POST)){
 
 $contact = new ContactVal($email, $commentary);
 $contact->contactValidation();
-header("location: ../contact.php?error=emptyinput");
+header("location: ../contact.php");
 ?>
