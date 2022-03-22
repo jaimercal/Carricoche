@@ -14,13 +14,13 @@ function validate(){
     let commentary = document.forms['contactForm']['commentary'].value;
     let valid = true;
 
-    if(email==NULL || email==""){
+    if(email==null || email==""){
         valid = false;
         console.log("Error email vacio");
-    }else if(commentary==NULL || commentary==""){
+    }else if(commentary==null || commentary==""){
         valid = false;
         console.log("Error comentario vacio");
-    }else if(validateEmail(email)){
+    }else if(!validateEmail(email.trim())){
         valid = false;
         console.log("Error al validar email");
     }

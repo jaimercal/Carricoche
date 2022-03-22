@@ -1,5 +1,7 @@
 <?php
 
+require "Contact.php";
+
 class ContactVal extends Contact{
     private $id;
     private $email;
@@ -72,7 +74,7 @@ class ContactVal extends Contact{
             exit();
         }else if(empty($this->commentary)){
             exit();
-        }else if($this->invalidEmail()){
+        }else if(!$this->invalidEmail()){
             exit();
         }
         $this->insert($this);

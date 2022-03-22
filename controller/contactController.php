@@ -1,6 +1,6 @@
 <?php
 
-require "model/ContactVal.php";
+require "../model/ContactVal.php";
 
 if(isset($_POST) && !empty($_POST)){
     $email = $_POST['email'];
@@ -8,5 +8,6 @@ if(isset($_POST) && !empty($_POST)){
 }
 
 $contact = new ContactVal($email, $commentary);
-echo $contact->contactValidation();
+$contact->contactValidation();
+header("location: ../contact.php?error=emptyinput");
 ?>
