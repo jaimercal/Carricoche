@@ -7,6 +7,7 @@
     <?php
     include "includes/head.php";
     ?>
+    <script src="js/contactValidation.js"></script>
     <title>Contacto</title>
 </head>
 <body>
