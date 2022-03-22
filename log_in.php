@@ -7,7 +7,7 @@
     <?php
     include "includes/head.php";
     ?>
-    <title>Accesorios</title>
+    <title>Registro</title>
 </head>
 <body>
 <?php
