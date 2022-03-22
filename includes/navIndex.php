@@ -1,5 +1,5 @@
 <nav class="navIndex">
-    <div class="navIndexIcon"><img src="img/icons/navIcon.png" alt="IconoMenú" title="Icono Menú"></div>
+    <div class="navIndexIcon"></div>
     <div class="nav">
         <div class="home"><a href="index.php">Inicio</a></div>
         <div class="news"><a href="news.php">Novedades</a></div>
