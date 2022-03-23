@@ -29,14 +29,6 @@ class ContactVal extends Contact{
 
     /**
      * @author Jrc
-     * @param mixed|string $id
-     */
-    public function setId($id) {
-        $this->id = $id;
-    }
-
-    /**
-     * @author Jrc
      * @return mixed|string
      */
     public function getEmail() {
@@ -45,26 +37,10 @@ class ContactVal extends Contact{
 
     /**
      * @author Jrc
-     * @param mixed|string $email
-     */
-    public function setEmail($email) {
-        $this->email = $email;
-    }
-
-    /**
-     * @author Jrc
      * @return mixed|string
      */
     public function getCommentary() {
         return $this->commentary;
-    }
-
-    /**
-     * @author Jrc
-     * @param mixed|string $commentary
-     */
-    public function setCommentary($commentary) {
-        $this->commentary = $commentary;
     }
 
     /**
