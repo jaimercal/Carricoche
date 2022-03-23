@@ -18,7 +18,7 @@ class SignupVal extends Signup {
      * @param $address
      * @param $password
      */
-    public function __construct($name, $surname, $username, $email, $address, $password) {
+    public function __construct($name, $surname, $username, $email, $address, $password, ) {
         $this->name = $name;
         $this->surname = $surname;
         $this->username = $username;
@@ -92,7 +92,7 @@ class SignupVal extends Signup {
     }
 
     public function diffPassword(){
-
+        
     }
 
     public function invalidUsername(){
