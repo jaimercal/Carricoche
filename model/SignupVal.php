@@ -81,7 +81,7 @@ class SignupVal extends Signup {
         }
         return $result;
     }
-    
+
     public function invalidPassword(){
 
     }
