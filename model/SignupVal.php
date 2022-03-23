@@ -83,6 +83,15 @@ class SignupVal extends Signup {
     }
 
     public function invalidPassword(){
+        if (!filter_var($this->email, FILTER_VALIDATE_EMAIL)){
+            $result = false;
+        }else{
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function diffPassword(){
 
     }
 
