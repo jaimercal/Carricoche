@@ -7,14 +7,27 @@
     <?php
     include "includes/head.php";
     ?>
-    <title>Registro</title>
+    <script src="js/loginValidation.js"></script>
+    <title>Inicio de Sesión</title>
 </head>
 <body>
 <?php
 include "includes/header.php";
 include "includes/navIndex.php";
 ?>
-<section></section>
+<section>
+    <form class="" name="loginForm" action="controller/loginController.php" method="post" enctype="multipart/form-data">
+        <div class="">
+            <label for="loginUsername"></label>
+            <input class="" id="" type="text" name="lUsername">
+        </div>
+        <div class="">
+            <label for="loginPassword"></label>
+            <input class="" id="" type="password" name="lPassword">
+        </div>
+        <button type="button" class="" id="" onclick="validateLogin()">Enviar</button>
+    </form>
+</section>
 <?php
 include "includes/footer.php";
 ?>

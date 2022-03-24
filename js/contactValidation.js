@@ -25,7 +25,7 @@ function validateEmail(email){
 /**
  * @author Jrc
  */
-function validate(){
+function validateContact(){
     let email = document.forms['contactForm']['cEmail'].value;
     let commentary = document.forms['contactForm']['cCommentary'].value;
     let valid = true;

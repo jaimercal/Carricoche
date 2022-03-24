@@ -7,7 +7,8 @@
     <?php
     include "includes/head.php";
     ?>
-    <title>Inicio de Sesión</title>
+    <script src="js/signupValidation.js"></script>
+    <title>Registro de Usuario</title>
 </head>
 <body>
 <?php
@@ -44,6 +45,7 @@ include "includes/navIndex.php";
             <label for="signupPasswordRep">Repetir contraseña:</label>
             <input class="" id="" type="password" name="sPasswordRep">
         </div>
+        <button type="button" class="" id="" onclick="validateSignup()">Enviar</button>
     </form>
 </section>
 <?php
