@@ -70,7 +70,7 @@ function emptyInput(email, name, surname, username, address, password, passwordR
 function validatePassword(password){
     let valid = false;
 
-    if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])$/.test(password)){
+    if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}$/.test(password)){
         valid = true;
     }else{
         valid = false;
