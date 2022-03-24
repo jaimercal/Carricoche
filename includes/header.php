@@ -1,8 +1,5 @@
 <header>
     <div class="logo">
-        <img src="" alt="">
-    </div>
-    <div class="logInImg">
-        <img src="" alt="">
+        <img src="img/logos/LogoSinFondo.png" alt="LogoCarricoche" title="Logo de la empresa">
     </div>
 </header>
