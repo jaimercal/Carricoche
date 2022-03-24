@@ -1,12 +1,8 @@
-
-@media only screen and (max-width: 500px){
-    .logo img{
-
-        width: 500px;
-        text-align: center;
-    }
+*{
+    margin: 0;
+    padding: 0;
 }
-
+/*Estilos comúnes*/
 footer{
     background-color: #ff6f00;
 }
@@ -14,18 +10,10 @@ header{
     background-color: #38352d;
     margin: auto;
 }
-.logo img{
-    width: 100%;
-}
-body{
-    background-color: #38352d;
-}
+
 .nav{
-    background-color: #ff6f00;
-}
-.nav div{
     width: auto;
-    background-color: #ccc;
+    background-color: #f1880f;
 
     display: flex;
     flex-wrap: nowrap;
@@ -33,4 +21,25 @@ body{
 .footerIcons{
     width: auto;
     display: flex;
+}
+body{
+    background-color: #38352d;
+}
+/*Estilos comúnes movil*/
+@media only screen and (max-width: 450px){
+    .logo img{
+        width: 100%;
+
+    }
+}
+/*Estilos comúnes ordenador*/
+@media only screen and (min-width: 450px){
+
+    .logo img{
+        width: 500px;
+        text-align: center;
+    }
+
+
+
 }
