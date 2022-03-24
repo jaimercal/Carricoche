@@ -70,10 +70,10 @@ function emptyInput(email, name, surname, username, address, password, passwordR
 function validatePassword(password){
     let valid = false;
 
-    if(/^\w$/.test(password)){
-        valid = false;
-    }else{
+    if(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])$/.test(password)){
         valid = true;
+    }else{
+        valid = false;
     }
     return valid;
 }
