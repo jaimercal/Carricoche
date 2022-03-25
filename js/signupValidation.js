@@ -9,6 +9,8 @@ if (error === "emptyinput"){
     alert("La contraseña ingresada no es válida");
 }else if(error === "invalideusername"){
     alert("El usuario ingresado no es válido");
+}else if(error === "existingusername"){
+    alert("El usuario ingresado ya existe");
 }else if(error === "passwordmatch"){
     alert("Las contraseñas no coinciden");
 }
@@ -103,7 +105,7 @@ function passwordMatch(password, passwordRep){
 function validateUsername(username){
     let valid = false;
 
-    if(username){
+    if(/^[a-zA-Z]+$/.test(username)){
         valid = false;
     }else{
         valid = true;

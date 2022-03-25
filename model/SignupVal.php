@@ -60,7 +60,7 @@ class SignupVal extends Signup {
      * @return bool
      */
     public function invalidPassword(){
-        if (!filter_var($this->pass,    FILTER_)){
+        if (!preg_match('@[A-Z]@', $this->pass) && !preg_match('@[a-z]@', $this->pass) && !preg_match('@[0-9]@', $this->pass)){
             $result = false;
         }else{
             $result = true;
@@ -84,7 +84,7 @@ class SignupVal extends Signup {
      * @return bool
      */
     public function invalidUsername(){
-        if (!filter_var($this->user->getUsername(),    FILTER_)){
+        if (!preg_match('@[A-Z]@', $this->user->getUsername()) || !preg_match('@[a-z]@', $this->user->getUsername())){
             $result = false;
         }else{
             $result = true;
@@ -123,6 +123,9 @@ class SignupVal extends Signup {
             exit();
         }else if(!$this->invalidUsername()){
             header("location: ../sign_up.php?error=invalidusername");
+            exit();
+        }else if($this->existingUsername($this->user->getUsername())){
+            header("location: ../sign_up.php?error=existingusername");
             exit();
         }
         $this->insert($this);
