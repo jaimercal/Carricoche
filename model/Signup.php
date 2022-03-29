@@ -38,5 +38,7 @@ class Signup extends Db {
             $result = false;
         }
         return $result;
+
+
     }
 }
