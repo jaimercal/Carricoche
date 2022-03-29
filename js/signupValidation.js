@@ -7,7 +7,7 @@ if (error === "emptyinput"){
     alert("El email ingresado no es válido");
 }else if(error === "invalidpassword"){
     alert("La contraseña ingresada no es válida");
-}else if(error === "invalideusername"){
+}else if(error === "invalidusername"){
     alert("El usuario ingresado no es válido");
 }else if(error === "existingusername"){
     alert("El usuario ingresado ya existe");
@@ -106,9 +106,9 @@ function validateUsername(username){
     let valid = false;
 
     if(/^[a-zA-Z]+$/.test(username)){
-        valid = false;
-    }else{
         valid = true;
+    }else{
+        valid = false;
     }
     return valid;
 }

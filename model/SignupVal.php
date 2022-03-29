@@ -72,7 +72,7 @@ class SignupVal extends Signup {
      * @return bool
      */
     public function diffPassword(){
-        if($this->user->gerPassword()!==$this->pass){
+        if($this->user->getPassword()!==$this->pass){
             $result = false;
         }else{
             $result = true;
@@ -84,11 +84,12 @@ class SignupVal extends Signup {
      * @return bool
      */
     public function invalidUsername(){
-        if (!preg_match('@[A-Z]@', $this->user->getUsername()) || !preg_match('@[a-z]@', $this->user->getUsername())){
+        if (!preg_match('@[A-Z]@', $this->user->getUsername()) && !preg_match('@[a-z]@', $this->user->getUsername())){
             $result = false;
         }else{
             $result = true;
         }
+        echo $result;
         return $result;
     }
 
@@ -128,6 +129,6 @@ class SignupVal extends Signup {
             header("location: ../sign_up.php?error=existingusername");
             exit();
         }
-        $this->insert($this);
+        $this->insert($this->user);
     }
 }

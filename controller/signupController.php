@@ -1,5 +1,6 @@
 <?php
 
+require "../model/User.php";
 require "../model/SignupVal.php";
 
 if(isset($_POST) && !empty($_POST)){

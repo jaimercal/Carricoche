@@ -9,5 +9,7 @@
         <div class="maintenance"><a href="mainteinance.php">Mantenimiento de Vehículo</a></div>
         <div class="accessories"><a href="accessories.php">Accesorios</a></div>
         <div class="contact"><a href="contact.php">Contacto</a></div>
+        <div class="signup"><a href="sign_up.php">Sign Up</a></div>
+        <div class="login"><a href="log_in.php">Log In</a></div>
     </div>
 </nav>
