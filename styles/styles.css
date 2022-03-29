@@ -1,3 +1,9 @@
 .footerIcons{
     background-color: black;
 }
+#sellCar{
+    display: none;
+}
+#sellMoto{
+    display: none;
+}
