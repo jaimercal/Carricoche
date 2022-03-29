@@ -19,7 +19,7 @@ include "includes/navIndex.php";
     <form class="" name="loginForm" action="controller/loginController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="loginUsername"></label>
-            <input class="" id="" type="text" name="lUsername">
+            <input class="" id="" type="text" name="lRegister">
         </div>
         <div class="">
             <label for="loginPassword"></label>
