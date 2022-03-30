@@ -57,8 +57,12 @@ include "includes/navIndex.php";
             <input class="" id="" type="text" name="sellCPower">
         </div>
         <div class="">
-            <label for="sellCarImages">Imagenes del coche: </label>
-            <input class="" id="" type="file" name="sellCImages">
+            <label for="sellCarImages">Imagenes del coche (Vista Frontal): </label>
+            <input class="" id="" type="file" name="sellCImagesF">
+        </div>
+        <div class="">
+            <label for="sellCarImages">Imagenes del coche (Vista Lateral): </label>
+            <input class="" id="" type="file" name="sellCImagesL">
         </div>
         <button type="button" class="" id="" onclick="validate()">Enviar</button>
     </form>
@@ -101,8 +105,12 @@ include "includes/navIndex.php";
             <input class="" id="" type="text" name="sellMCC">
         </div>
         <div class="">
-            <label for="sellMotoImages">Imagenes de la moto: </label>
-            <input class="" id="" type="file" name="sellMImages">
+            <label for="sellMotoImages">Imagenes de la moto (vista frontal): </label>
+            <input class="" id="" type="file" name="sellMImagesF">
+        </div>
+        <div class="">
+            <label for="sellMotoImages">Imagenes de la moto (vista lateral): </label>
+            <input class="" id="" type="file" name="sellMImagesL">
         </div>
         <button type="button" class="" id="" onclick="validate()">Enviar</button>
     </form>
