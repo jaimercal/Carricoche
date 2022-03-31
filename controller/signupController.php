@@ -1,7 +1,7 @@
 <?php
 
 require "../model/User.php";
-require "../model/SignupVal.php";
+require "../model/Signup.php";
 
 if(isset($_POST) && !empty($_POST)){
     $email = $_POST['sEmail'];
@@ -14,6 +14,6 @@ if(isset($_POST) && !empty($_POST)){
 }
 
 $user = new User($name, $surname, $username, $email, $address, $password);
-$signup = new SignupVal($user, $passwordRep);
+$signup = new Signup($user, $passwordRep);
 $signup->signupValidation();
 header("location: ../sign_up.php");

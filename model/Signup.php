@@ -1,44 +1,134 @@
 <?php
 
-require "Db.php";
+require "UserConn.php";
 
-class Signup extends Db {
+class Signup extends UserConn {
+    private $user;
+    private $pass;
+
     /**
-     * @author Jrc
-     * @param $obj
-     * @return void
+     * @param $user
+     * @param $pass
      */
-    protected function insert($obj){
-        $db = new Db();
-        $connection = $db->connect();
-        $sql = "insert into users (email, name, surname, username, address, password) values ('".$obj->getEmail()."', '".$obj->getName()."', '".$obj->getSurname()."', '".$obj->getUsername()."', '".$obj->getAddress()."', '".$obj->getPassword()."')";
-        $connection->query($sql);
+    public function __construct($user, $pass) {
+        $this->user = $user;
+        $this->pass = $pass;
     }
 
-    protected function existingUsername($username){
-        $db = new Db();
-        $connection = $db->connect();
+    /**
+     * @return mixed
+     */
+    public function getUser() {
+        return $this->user;
+    }
 
-        $sql = "SELECT username FROM users WHERE username = ?;";
-        $stmt = mysqli_stmt_init($connection);
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user) {
+        $this->user = $user;
+    }
 
-        if(!mysqli_stmt_prepare($stmt, $sql)){
-            header("location: ../sign_up.php?error=stmterror");
-            exit();
-        }
+    /**
+     * @return mixed
+     */
+    public function getPass() {
+        return $this->pass;
+    }
 
-        mysqli_stmt_bind_param($stmt, "s", $username);
-        mysqli_stmt_execute($stmt);
+    /**
+     * @param mixed $pass
+     */
+    public function setPass($pass) {
+        $this->pass = $pass;
+    }
 
-        $resultData = mysqli_stmt_get_result($stmt);
-
-        if($row = mysqli_fetch_assoc($resultData)){
+    /**
+     * @author Jrc
+     * @return bool
+     */
+    public function invalidEmail(){
+        if (!filter_var($this->user->getEmail(), FILTER_VALIDATE_EMAIL)){
+            $result = false;
+        }else{
             $result = true;
-            return $row;
+        }
+        return $result;
+    }
+
+    /**
+     * @return bool
+     */
+    public function invalidPassword(){
+        if (!preg_match('@[A-Z]@', $this->pass) && !preg_match('@[a-z]@', $this->pass) && !preg_match('@[0-9]@', $this->pass)){
+            $result = false;
+        }else{
+            $result = true;
+        }
+        return $result;
+    }
+
+    /**
+     * @return bool
+     */
+    public function diffPassword(){
+        if($this->user->getPassword()!==$this->pass){
+            $result = false;
+        }else{
+            $result = true;
+        }
+        return $result;
+    }
+
+    /**
+     * @return bool
+     */
+    public function invalidUsername(){
+        if (!preg_match('@[A-Z]@', $this->user->getUsername()) && !preg_match('@[a-z]@', $this->user->getUsername())){
+            $result = false;
+        }else{
+            $result = true;
+        }
+        echo $result;
+        return $result;
+    }
+
+    /**
+     * @return bool
+     */
+    public function emptyInput(){
+        if(empty($this->user->getEmail())||empty($this->user->getName())||empty($this->user->getSurname())||empty($this->user->getUsername())||empty($this->user->getAddress())||empty($this->user->getPassword())||empty($this->pass)){
+            $result = true;
         }else{
             $result = false;
         }
         return $result;
-        mysqli_stmt_close($stmt);
+    }
+
+    /**
+     * @author Jrc
+     * @return void
+     */
+    public function signupValidation(){
+        if($this->emptyInput()){
+            header("location: ../sign_up.php?error=emptyinput");
+            exit();
+        }else if(!$this->invalidEmail()){
+            header("location: ../sign_up.php?error=invalidemail");
+            exit();
+        }else if(!$this->diffPassword()){
+            header("location: ../sign_up.php?error=passwordmatch");
+            exit();
+        }else if(!$this->invalidPassword()){
+            header("location: ../sign_up.php?error=invalidpassword");
+            exit();
+        }else if(!$this->invalidUsername()){
+            header("location: ../sign_up.php?error=invalidusername");
+            exit();
+        }else if($this->existingUser($this->user->getUsername(), $this->user->getEmail())){
+            header("location: ../sign_up.php?error=existinguser");
+            exit();
+        }
+        $this->insert($this->user);
     }
 }

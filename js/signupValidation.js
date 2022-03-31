@@ -9,8 +9,8 @@ if (error === "emptyinput"){
     alert("La contraseña ingresada no es válida");
 }else if(error === "invalidusername"){
     alert("El usuario ingresado no es válido");
-}else if(error === "existingusername"){
-    alert("El usuario ingresado ya existe");
+}else if(error === "existinguser"){
+    alert("El usuario o correo ingresados ya existen");
 }else if(error === "passwordmatch"){
     alert("Las contraseñas no coinciden");
 }

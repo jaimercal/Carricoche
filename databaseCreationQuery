@@ -10,15 +10,6 @@ create table contacts(
     commentary text
 );
 
-create table photos(
-	id_photos int primary key auto_increment,
-    photo1 varchar(45),
-    photo2 varchar(45),
-    photo3 varchar(45),
-    photo4 varchar(45),
-    photo5 varchar(45)
-);
-
 create table users(
 	id_users int primary key auto_increment,
     name varchar(45) not null,
@@ -40,8 +31,9 @@ create table cars(
     year year,
     power int,
     sold tinyint,
-    id_photos int,
-    foreign key (id_photos) references photos(id_photos),
+    frontalPhoto varchar(45),
+    lateralPhoto varchar(45),
+    freePhoto varchar(45),
     id_users int,
     foreign key (id_users) references users(id_users)
 );
@@ -58,8 +50,9 @@ create table bikes(
     power int,
     cc int,
     sold tinyint,
-    id_photos int,
-    foreign key (id_photos) references photos(id_photos),
+    frontalPhoto varchar(45),
+    lateralPhoto varchar(45),
+    freePhoto varchar(45),
     id_users int,
     foreign key (id_users) references users(id_users)
 );
