@@ -14,7 +14,7 @@ class SellCVal extends SellC {
     private $power;
 
     /**
-     * @author MVF
+     * @author JRC y MVF
      * @param $id
      * @param $name
      * @param $brand
@@ -162,6 +162,33 @@ class SellCVal extends SellC {
     public function setPower($power) {
         $this->power = $power;
     }
-
+    public function sellCValidation(){
+        if(empty($this->name)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->brand)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->prize)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }if(empty($this->kilometers)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->color)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->type)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->year)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->power)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }
+        $this->insert($this);
+    }
 
 }
