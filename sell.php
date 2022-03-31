@@ -23,7 +23,7 @@ include "includes/navIndex.php";
             <option value="2">Venta de motos</option>
         </select>
     </div>
-    <form class="" id="sellCar" name="sellCarForm" action="controller/sellController.php" method="post" enctype="multipart/form-data">
+    <form class="" id="sellCar" name="sellCarForm" action="controller/sellCController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="sellCarName">Modelo del coche: </label>
             <input class="" id="" type="text" name="sellCName">
@@ -57,12 +57,16 @@ include "includes/navIndex.php";
             <input class="" id="" type="text" name="sellCPower">
         </div>
         <div class="">
-            <label for="sellCarImages">Imagenes del coche (Vista Frontal): </label>
+            <label for="sellCarImagesF">Imagenes del coche (Vista Frontal): </label>
             <input class="" id="" type="file" name="sellCImagesF">
         </div>
         <div class="">
-            <label for="sellCarImages">Imagenes del coche (Vista Lateral): </label>
-            <input class="" id="" type="file" name="sellCImagesL">
+            <label for="sellCarImagesLa">Imagenes del coche (Vista Lateral): </label>
+            <input class="" id="" type="file" name="sellCImagesLa">
+        </div>
+        <div class="">
+            <label for="sellCarImagesLi">Imagenes del coche (Libre): </label>
+            <input class="" id="" type="file" name="sellCImagesLi">
         </div>
         <button type="button" class="" id="" onclick="validate()">Enviar</button>
     </form>
@@ -105,12 +109,16 @@ include "includes/navIndex.php";
             <input class="" id="" type="text" name="sellMCC">
         </div>
         <div class="">
-            <label for="sellMotoImages">Imagenes de la moto (vista frontal): </label>
+            <label for="sellMotoImagesF">Imagenes de la moto (vista frontal): </label>
             <input class="" id="" type="file" name="sellMImagesF">
         </div>
         <div class="">
-            <label for="sellMotoImages">Imagenes de la moto (vista lateral): </label>
-            <input class="" id="" type="file" name="sellMImagesL">
+            <label for="sellMotoImagesLa">Imagenes de la moto (vista lateral): </label>
+            <input class="" id="" type="file" name="sellMImagesLa">
+        </div>
+        <div class="">
+            <label for="sellMotoImagesLi">Imagenes de la moto (libre): </label>
+            <input class="" id="" type="file" name="sellMImagesLi">
         </div>
         <button type="button" class="" id="" onclick="validate()">Enviar</button>
     </form>
