@@ -25,9 +25,9 @@ function validateEmail(email){
 /**
  * @author Jrc
  */
-function validate(){
-    let email = document.forms['contactForm']['email'].value;
-    let commentary = document.forms['contactForm']['commentary'].value;
+function validateContact(){
+    let email = document.forms['contactForm']['cEmail'].value;
+    let commentary = document.forms['contactForm']['cCommentary'].value;
     let valid = true;
 
     if(email==null || email==""){

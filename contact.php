@@ -19,13 +19,13 @@ include "includes/navIndex.php";
     <form class="" name="contactForm" action="controller/contactController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="contactEmail">Email:</label>
-            <input class="" id="" type="text" name="email">
+            <input class="" id="" type="text" name="cEmail">
         </div>
         <div class="">
             <label for="contactCommentary">Comentario:</label>
-            <textarea name="commentary" class="" id="" cols="30" rows="10"></textarea>
+            <textarea name="cCommentary" class="" id="" cols="30" rows="10"></textarea>
         </div>
-        <button type="button" class="" id="" onclick="validate()">Enviar</button>
+        <button type="button" class="" id="" onclick="validateContact()">Enviar</button>
     </form>
 </section>
 <?php

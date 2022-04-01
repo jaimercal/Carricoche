@@ -6,58 +6,53 @@ use carricoche;
 
 create table contacts(
 	id_contacts int primary key auto_increment,
-    email varchar(45) not null,
+    email varchar(255) not null,
     commentary text
-);
-
-create table photos(
-	id_photos int primary key auto_increment,
-    photo1 varchar(45),
-    photo2 varchar(45),
-    photo3 varchar(45),
-    photo4 varchar(45),
-    photo5 varchar(45)
 );
 
 create table users(
 	id_users int primary key auto_increment,
-    name varchar(45) not null,
-    surname varchar(45) not null,
-    username varchar(45) not null,
-    email varchar(45) not null,
-    password varchar(45) not null,
-    address varchar(100) not null
+    name varchar(255) not null,
+    surname varchar(255) not null,
+    username varchar(255) not null,
+    email varchar(255) not null,
+    password varchar(255) not null,
+    address varchar(255) not null
 );
 
 create table cars(
 	id_cars int primary key auto_increment,
-    name varchar(45),
-    brand varchar(45),
+    name varchar(255),
+    brand varchar(255),
     prize float,
     kilometers float,
-    color varchar(45),
-    type varchar(45),
+    color varchar(255),
+    type varchar(255),
     year year,
     power int,
-    id_photos int,
-    foreign key (id_photos) references photos(id_photos),
+    sold tinyint,
+    frontalPhoto varchar(255),
+    lateralPhoto varchar(255),
+    freePhoto varchar(255),
     id_users int,
     foreign key (id_users) references users(id_users)
 );
 
 create table bikes(
 	id_bikes int primary key auto_increment,
-    name varchar(45),
-    brand varchar(45),
+    name varchar(255),
+    brand varchar(255),
     prize float,
     kilometers float,
-    color varchar(45),
-    type varchar(45),
+    color varchar(255),
+    type varchar(255),
     year year,
     power int,
     cc int,
-    id_photos int,
-    foreign key (id_photos) references photos(id_photos),
+    sold tinyint,
+    frontalPhoto varchar(255),
+    lateralPhoto varchar(255),
+    freePhoto varchar(255),
     id_users int,
     foreign key (id_users) references users(id_users)
 );

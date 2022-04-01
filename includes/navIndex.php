@@ -9,5 +9,14 @@
         <div class="maintenance"><a href="mainteinance.php">Mantenimiento de Vehículo</a></div>
         <div class="accessories"><a href="accessories.php">Accesorios</a></div>
         <div class="contact"><a href="contact.php">Contacto</a></div>
+        <?php
+            if(isset($_SESSION['username'])){
+                echo "<div class='profile'><a href='profile.php'>Perfil</a></div>";
+                echo "<div class='logout'><a href='includes/logout.php'>Cerrar Sesión</a></div>";
+            }else{
+                echo "<div class='signup'><a href='sign_up.php'>Registrarse</a></div>";
+                echo "<div class='login'><a href='log_in.php'>Iniciar Sesión</a></div>";
+            }
+        ?>
     </div>
 </nav>
