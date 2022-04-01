@@ -2,7 +2,7 @@
 
 require "Contact.php";
 
-class ContactVal extends Contact{
+class Contact extends ContactConn{
     private $id;
     private $email;
     private $commentary;

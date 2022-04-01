@@ -11,9 +11,9 @@ if(isset($_POST) && !empty($_POST)){
     $address = $_POST['sAddress'];
     $password = $_POST['sPassword'];
     $passwordRep = $_POST['sPasswordRep'];
-}
 
-$user = new User($name, $surname, $username, $email, $address, $password);
-$signup = new Signup($user, $passwordRep);
-$signup->signupValidation();
-header("location: ../sign_up.php");
+    $user = new User($name, $surname, $username, $email, $address, $password);
+    $signup = new Signup($user, $passwordRep);
+    $signup->signupValidation();
+    //header("location: ../sign_up.php");
+}
