@@ -3,6 +3,8 @@ const urlParams = new URLSearchParams(queryString);
 const error = urlParams.get("error");
 if (error === "emptyinput") {
     alert("Debes llenar todos los campos");
+}else if (error === "notloged"){
+    alert("Debes iniciar sesion");
 }
 
 function validateC(){
@@ -14,6 +16,7 @@ function validateC(){
     let type = document.forms['sellCarForm']['sellCType'].value;
     let year = document.forms['sellCarForm']['sellCYear'].value;
     let power = document.forms['sellCarForm']['sellCPower'].value;
+    let valid = true;
 
     if(name==null || name==""){
         valid = false;

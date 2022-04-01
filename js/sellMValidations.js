@@ -1,8 +1,7 @@
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const error = urlParams.get("error");
 if (error === "emptyinput") {
     alert("Debes llenar todos los campos");
+}else if (error === "notloged"){
+    alert("Debes iniciar sesion");
 }
 
 function validateM(){
@@ -15,6 +14,7 @@ function validateM(){
     let year = document.forms['sellMotoForm']['sellMYear'].value;
     let power = document.forms['sellMotoForm']['sellMPower'].value;
     let cc = document.forms['sellMotoForm']['sellMCC'].value;
+    let valid = true;
 
     if(name==null || name==""){
         valid = false;

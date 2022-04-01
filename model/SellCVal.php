@@ -1,6 +1,6 @@
 <?php
 
-require "sell.php";
+require "SellC.php";
 
 class SellCVal extends SellC {
     private $name;
@@ -141,13 +141,7 @@ class SellCVal extends SellC {
         return $this->power;
     }
 
-    /**
-     * @param mixed $power
-     */
-    public function setPower($power) {
-        $this->power = $power;
-    }
-    public function sellCValidation(){
+    public function emptyInput(){
         if(empty($this->name)){
             header("location: ../sell.php?error=emptyinput");
             exit();
@@ -171,6 +165,20 @@ class SellCVal extends SellC {
             exit();
         }else if(empty($this->power)){
             header("location: ../sell.php?error=emptyinput");
+            exit();
+        }
+    }
+
+    /**
+     * @param mixed $power
+     */
+    public function setPower($power) {
+        $this->power = $power;
+    }
+    public function sellCValidation(){
+        $this->emptyInput();
+        if (!isset($_SESSION['username'])){
+            header("location: ../sell.php?error=notloged");
             exit();
         }
         $this->insert($this);

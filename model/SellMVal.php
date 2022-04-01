@@ -1,8 +1,8 @@
 <?php
 
-require "sell.php";
+require "SellM.php";
 
-class SellMVal {
+class SellMVal extends SellM {
 
     private $name;
     private $brand;
@@ -26,6 +26,7 @@ class SellMVal {
      * @param $power
      * @param $cc
      */
+
     public function __construct($name, $brand, $prize, $kilometers, $color, $type, $year, $power, $cc) {
         $this->name = $name;
         $this->brand = $brand;
@@ -166,7 +167,7 @@ class SellMVal {
         $this->cc = $cc;
     }
 
-    public function sellMValidation(){
+    public function emptyInput(){
         if(empty($this->name)){
             header("location: ../sell.php?error=emptyinput");
             exit();
@@ -193,6 +194,14 @@ class SellMVal {
             exit();
         }else if(empty($this->cc)){
             header("location: ../sell.php?error=emptyinput");
+            exit();
+        }
+    }
+
+    public function sellMValidation(){
+        $this->emptyInput();
+        if (!isset($_SESSION['username'])){
+            header("location: ../sell.php?error=notloged");
             exit();
         }
         $this->insert($this);
