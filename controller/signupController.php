@@ -15,5 +15,5 @@ if(isset($_POST) && !empty($_POST)){
     $user = new User($name, $surname, $username, $email, $address, $password);
     $signup = new Signup($user, $passwordRep);
     $signup->signupValidation();
-    //header("location: ../sign_up.php");
+    header("location: ../sign_up.php");
 }

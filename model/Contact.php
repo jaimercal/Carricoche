@@ -3,28 +3,17 @@
 require "Contact.php";
 
 class Contact extends ContactConn{
-    private $id;
     private $email;
     private $commentary;
 
     /**
      * @author Jrc
-     * @param $id
      * @param $email
      * @param $commentary
      */
-    public function __construct($email="", $commentary="",$id="") {
-        $this->id = $id;
+    public function __construct($email, $commentary) {
         $this->email = $email;
         $this->commentary = $commentary;
-    }
-
-    /**
-     * @author Jrc
-     * @return mixed|string
-     */
-    public function getId() {
-        return $this->id;
     }
 
     /**

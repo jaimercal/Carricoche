@@ -1,8 +1,10 @@
 <?php
 
+require "UserConn.php";
+
 class Login extends UserConn {
     private $register;
-    private $pass;
+    private $password;
 
     /**
      * @param $register
@@ -10,7 +12,7 @@ class Login extends UserConn {
      */
     public function __construct($register, $pass) {
         $this->register = $register;
-        $this->pass = $pass;
+        $this->password = $pass;
     }
 
     /**
@@ -23,9 +25,56 @@ class Login extends UserConn {
     /**
      * @return mixed
      */
-    public function getPass() {
-        return $this->pass;
+    public function getPassword() {
+        return $this->password;
     }
 
+    public function emptyInput(){
+        if(empty($this->register)||empty($this->password)){
+            $result = true;
+        }else{
+            $result = false;
+        }
+        return $result;
+    }
 
+    public function invalidPassword(){
+        if (strlen($this->password) < 4){
+            $result = false;
+        }else{
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function loginValidation(){
+        if($this->emptyInput()){
+            header("location: ../log_in.php?error=emptyinput");
+            exit();
+        }else if(!$this->invalidPassword()){
+            header("location: ../log_in.php?error=invalidpassword");
+            exit();
+        }
+    }
+
+    public function logIn(){
+        $this->loginValidation();
+        $user = $this->existingUser($this->register, $this->register);
+        if(!$user){
+            header("location: ../log_in.php?error=usernotexisting");
+            exit();
+        }
+        $hashedPass = $user['password'];
+        $checkPass = password_verify($this->password, $hashedPass);
+        if($checkPass){
+            session_start();
+            $_SESSION['userId'] = $user['id_users'];
+            $_SESSION['username'] = $user['username'];
+            header("location: ../index.php");
+            exit();
+        }else{
+            header("location: ../log_in.php?error=incorrectpassword");
+            exit();
+        }
+    }
 }

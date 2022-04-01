@@ -60,7 +60,7 @@ class Signup extends UserConn {
      * @return bool
      */
     public function invalidPassword(){
-        if (!preg_match('@[A-Z]@', $this->pass) && !preg_match('@[a-z]@', $this->pass) && !preg_match('@[0-9]@', $this->pass)){
+        if (!preg_match('@[A-Z]@', $this->pass) || !preg_match('@[a-z]@', $this->pass) || !preg_match('@[0-9]@', $this->pass) || strlen($this->pass) < 4){
             $result = false;
         }else{
             $result = true;
