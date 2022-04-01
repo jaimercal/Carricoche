@@ -7,6 +7,8 @@
     <?php
     include "includes/head.php";
     ?>
+    <script src="js/sellCValidations.js"></script>
+    <script src="js/sellMValidations.js"></script>
     <title>Vender</title>
 </head>
 <body>
@@ -68,10 +70,10 @@ include "includes/navIndex.php";
             <label for="sellCarImagesLi">Imagenes del coche (Libre): </label>
             <input class="" id="" type="file" name="sellCImagesLi">
         </div>
-        <button type="button" class="" id="" onclick="validate()">Enviar</button>
+        <button type="button" class="" id="" onclick="validateC()">Enviar</button>
     </form>
 
-    <form class="" id="sellMoto" name="sellMotoForm" action="controller/contactController.php" method="post" enctype="multipart/form-data">
+    <form class="" id="sellMoto" name="sellMotoForm" action="controller/sellMController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="sellMotoName">Modelo de la moto: </label>
             <input class="" id="" type="text" name="sellMName">
@@ -120,7 +122,7 @@ include "includes/navIndex.php";
             <label for="sellMotoImagesLi">Imagenes de la moto (libre): </label>
             <input class="" id="" type="file" name="sellMImagesLi">
         </div>
-        <button type="button" class="" id="" onclick="validate()">Enviar</button>
+        <button type="button" id="" class="" onclick="validateM()">Enviar</button>
     </form>
 </section>
 <?php

@@ -4,7 +4,7 @@ require "Db.php";
 
 class Contact extends Db {
     /**
-     * @author Jrc
+     * @author Jrc y MVF
      * @param $obj
      * @return void
      */

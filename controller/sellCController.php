@@ -22,7 +22,7 @@ if(isset($_POST) && !empty($_POST)){
     }
 }
 
-$sell = new SellC($name,$brand,$price,$kilometers,$color,$type,$year,$power);
+$sell = new SellCVal($name,$brand,$price,$kilometers,$color,$type,$year,$power);
 $sell->sellCValidation();
 header("location: ../sell.php");
 ?>

@@ -3,7 +3,7 @@
 class Db {
     private $server = "localhost";
     private $user = "root";
-    private $pass = "1234";
+    private $pass = "12345";
     private $database = "carricoche";
     private $port = "3360";
     private $connection;

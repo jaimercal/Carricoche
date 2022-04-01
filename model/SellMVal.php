@@ -2,7 +2,8 @@
 
 require "sell.php";
 
-class SellCVal extends SellC {
+class SellMVal {
+
     private $name;
     private $brand;
     private $prize;
@@ -11,9 +12,10 @@ class SellCVal extends SellC {
     private $type;
     private $year;
     private $power;
+    private $cc;
 
     /**
-     * @author JRC y MVF
+     * @author Jrc y MVF
      * @param $name
      * @param $brand
      * @param $prize
@@ -22,9 +24,9 @@ class SellCVal extends SellC {
      * @param $type
      * @param $year
      * @param $power
+     * @param $cc
      */
-    public function __construct( $name, $brand, $prize, $kilometers, $color, $type, $year, $power) {
-
+    public function __construct($name, $brand, $prize, $kilometers, $color, $type, $year, $power, $cc) {
         $this->name = $name;
         $this->brand = $brand;
         $this->prize = $prize;
@@ -33,7 +35,9 @@ class SellCVal extends SellC {
         $this->type = $type;
         $this->year = $year;
         $this->power = $power;
+        $this->cc = $cc;
     }
+
 
 
     /**
@@ -147,7 +151,22 @@ class SellCVal extends SellC {
     public function setPower($power) {
         $this->power = $power;
     }
-    public function sellCValidation(){
+
+    /**
+     * @return mixed
+     */
+    public function getCc() {
+        return $this->cc;
+    }
+
+    /**
+     * @param mixed $cc
+     */
+    public function setCc($cc) {
+        $this->cc = $cc;
+    }
+
+    public function sellMValidation(){
         if(empty($this->name)){
             header("location: ../sell.php?error=emptyinput");
             exit();
@@ -170,6 +189,9 @@ class SellCVal extends SellC {
             header("location: ../sell.php?error=emptyinput");
             exit();
         }else if(empty($this->power)){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->cc)){
             header("location: ../sell.php?error=emptyinput");
             exit();
         }
