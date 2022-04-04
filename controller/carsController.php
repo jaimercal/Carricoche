@@ -1,7 +1,7 @@
 <?php
 session_start();
-require "../model/SellCVal.php";
-require "../model/Photo.php";
+require_once "../model/Cars.php";
+require_once "../model/Photo.php";
 
 if(isset($_POST) && !empty($_POST)){
     $name = $_POST['sellCName'];
@@ -20,7 +20,7 @@ if(isset($_POST) && !empty($_POST)){
     }
 }
 $photo = new Photo($imagesF, $imagesLa, $imagesLi);
-$sell = new SellCVal($name,$brand,$price,$kilometers,$color,$type,$year,$power,$photo);
+$sell = new Cars($name,$brand,$price,$kilometers,$color,$type,$year,$power,$photo);
 $sell->sellCValidation();
 header("location: ../sell.php");
 ?>

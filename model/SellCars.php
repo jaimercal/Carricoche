@@ -1,7 +1,7 @@
 <?php
 
 require_once "Db.php";
-class SellM extends Db {
+class SellCars extends Db {
     /**
      * @author Jrc y MVF
      * @param $obj
@@ -10,17 +10,16 @@ class SellM extends Db {
     protected function insert($obj, $obj2){
         $db = new Db();
         $connection = $db->connect();
-        $stmt = $connection->prepare("insert into bikes (name,brand,prize,kilometers,color,type,year,power,cc,sold,frontalPhoto,lateralPhoto,freePhoto) values (?,?,?,?,?,?,?,?,?,?,?,?,?);");
-        $stmt->bind_param("ssddsssiiisss", $name, $brand, $price, $kilometers, $color, $type, $year, $power, $cc, $sold, $photoF, $photoL, $photoFree);
+        $stmt = $connection->prepare("insert into cars (name,brand,prize,kilometers,color,type,year,power,sold,frontalPhoto,lateralPhoto,freePhoto) values (?,?,?,?,?,?,?,?,?,?,?,?);");
+        $stmt->bind_param("ssddsssiisss", $name, $brand, $price, $kilometers, $color, $type, $year, $power, $sold, $photoF, $photoL, $photoFree);
         $name = $obj->getName();
         $brand = $obj->getBrand();
         $price = $obj->getPrize();
         $kilometers = $obj->getKilometers();
-        $color = $obj->getColors();
+        $color = $obj->getColor();
         $type = $obj->getType();
         $year = $obj->getYear();
         $power = $obj->getPower();
-        $cc = $obj->getCc();
         $photoF = $obj2->getFrontalPhoto();
         $photoL = $obj2->getLateralPhoto();
         $photoFree = $obj2->getFreePhoto();
@@ -30,10 +29,10 @@ class SellM extends Db {
         $connection->close();
     }
 
-    public function existingMoto(){
+    public function existingCar(){
         $db = new Db();
         $connection = $db->connect();
-        $stmt = $connection->query("select name, brand, prize, kilometers, color, type, year, power,cc,frontalPhoto,lateralPhoto,freePhoto from bikes where sold = 0;");
+        $stmt = $connection->query("select name, brand, prize, kilometers, color, type, year, power,frontalPhoto,lateralPhoto,freePhoto from cars where sold = 0;");
         if($array = $stmt->fetch_all(ARRAY_FILTER_USE_BOTH)){
             $result = $array;
         }else{
@@ -43,4 +42,5 @@ class SellM extends Db {
         $connection->close();
         return $result;
     }
+
 }

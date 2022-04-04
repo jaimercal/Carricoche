@@ -1,14 +1,14 @@
 <?php
 
-require_once "SellC.php";
-require_once "SellM.php";
+require_once "SellCars.php";
+require_once "SellMotos.php";
 require_once "Products.php";
 
 class Store {
 
 
     public function genCars(){
-        $sellC = new SellC();
+        $sellC = new SellCars();
         $array = $sellC->existingCar();
         $result = [];
         foreach ($array as $car){
@@ -19,7 +19,7 @@ class Store {
     }
 
     public function genMotos(){
-        $sellM = new SellM();
+        $sellM = new SellMotos();
         $array = $sellM->existingMoto();
         $result = [];
         foreach ($array as $moto){

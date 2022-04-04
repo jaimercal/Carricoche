@@ -1,9 +1,9 @@
 <?php
 
-require "SellM.php";
-require "Products.php";
+require_once "SellMotos.php";
+require_once "Products.php";
 
-class SellMVal extends SellM {
+class Motos extends SellMotos {
 
     private $name;
     private $brand;

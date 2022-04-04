@@ -1,6 +1,6 @@
 <?php
 
-require "../model/Contact.php";
+require_once "../model/Contact.php";
 
 if(isset($_POST) && !empty($_POST)){
     $email = $_POST['cEmail'];

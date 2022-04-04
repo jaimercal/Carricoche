@@ -1,7 +1,7 @@
 <?php
 
-require "../model/User.php";
-require "../model/Signup.php";
+require_once "../model/User.php";
+require_once "../model/Signup.php";
 
 if(isset($_POST) && !empty($_POST)){
     $email = $_POST['sEmail'];

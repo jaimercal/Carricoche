@@ -7,8 +7,8 @@
     <?php
     include "includes/head.php";
     ?>
-    <script src="js/sellCValidations.js"></script>
-    <script src="js/sellMValidations.js"></script>
+    <script src="js/carsValidations.js"></script>
+    <script src="js/motosValidations.js"></script>
     <title>Vender</title>
 </head>
 <body>
@@ -25,7 +25,7 @@ include "includes/navIndex.php";
             <option value="2">Venta de motos</option>
         </select>
     </div>
-    <form class="" id="sellCar" name="sellCarForm" action="controller/sellCController.php" method="post" enctype="multipart/form-data">
+    <form class="" id="sellCar" name="sellCarForm" action="controller/carsController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="sellCarName">Modelo del coche: </label>
             <input class="" id="" type="text" name="sellCName">
@@ -73,7 +73,7 @@ include "includes/navIndex.php";
         <button type="button" class="" id="" onclick="validateC()">Enviar</button>
     </form>
 
-    <form class="" id="sellMoto" name="sellMotoForm" action="controller/sellMController.php" method="post" enctype="multipart/form-data">
+    <form class="" id="sellMoto" name="sellMotoForm" action="controller/motosController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="sellMotoName">Modelo de la moto: </label>
             <input class="" id="" type="text" name="sellMName">

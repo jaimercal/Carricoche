@@ -1,7 +1,7 @@
 <?php
 session_start();
-require "../model/SellMVal.php";
-require "../model/Photo.php";
+require_once "../model/Motos.php";
+require_once "../model/Photo.php";
 
 if(isset($_POST) && !empty($_POST)){
     $name = $_POST['sellMName'];
@@ -20,7 +20,7 @@ if(isset($_POST) && !empty($_POST)){
     }
 }
 $photo = new Photo($imagesF, $imagesLa, $imagesLi);
-$sell = new SellMVal($name,$brand,$price,$kilometers,$color,$type,$year,$power,$cc,$photo);
+$sell = new Motos($name,$brand,$price,$kilometers,$color,$type,$year,$power,$cc,$photo);
 $sell->sellMValidation();
 header("location: ../sell.php");
 ?>
