@@ -151,12 +151,15 @@ footer{
     width: auto;
     display: flex;
 }
-section{
+section {
     grid-area: section;
     background-color: #38352d;
-
+}
 
 #sellCar{
+    display: none;
+}
+#sellMoto{
     display: none;
 }
 body{
@@ -239,8 +242,7 @@ button{
         flex-wrap: nowrap;
 
     }
-#sellMoto{
-    display: none;
+
 }
 /*Estilos comúnes ordenador*/
 @media only screen and (min-width: 450px){
@@ -268,4 +270,3 @@ button{
 
 
 }
-
