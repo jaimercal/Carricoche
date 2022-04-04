@@ -1,6 +1,6 @@
 <?php
 
-require "../model/Login.php";
+require_once "../model/Login.php";
 
 if(isset($_POST) && !empty($_POST)){
     $registre = $_POST['lRegister'];

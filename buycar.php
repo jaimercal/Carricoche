@@ -18,7 +18,7 @@ include "includes/navBuy.php";
 <section>
     <div class="products">
         <?php
-        require "model/Store.php";
+        require_once "model/Store.php";
         $store = new Store();
         echo $store->printC();
         ?>

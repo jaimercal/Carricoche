@@ -105,7 +105,7 @@ function passwordMatch(password, passwordRep){
 function validateUsername(username){
     let valid = false;
 
-    if(/^[a-zA-Z]+$/.test(username)){
+    if(/^[a-zA-Z0-9]+$/.test(username)){
         valid = true;
     }else{
         valid = false;

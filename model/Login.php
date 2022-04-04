@@ -1,6 +1,6 @@
 <?php
 
-require "UserConn.php";
+require_once "UserConn.php";
 
 class Login extends UserConn {
     private $register;

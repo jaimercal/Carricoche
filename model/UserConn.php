@@ -1,6 +1,6 @@
 <?php
 
-require "Db.php";
+require_once "Db.php";
 
 class UserConn extends Db {
     /**

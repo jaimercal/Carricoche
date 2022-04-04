@@ -1,9 +1,9 @@
 <?php
 
-require "SellC.php";
-require "Products.php";
+require_once "SellCars.php";
+require_once "Products.php";
 
-class SellCVal extends SellC {
+class Cars extends SellCars {
     private $name;
     private $brand;
     private $prize;

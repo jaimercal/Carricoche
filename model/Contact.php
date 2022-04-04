@@ -1,6 +1,6 @@
 <?php
 
-require "Contact.php";
+require_once "ContactConn.php";
 
 class Contact extends ContactConn{
     private $email;
