@@ -16,7 +16,7 @@ class SellMotos extends Db {
         $brand = $obj->getBrand();
         $price = $obj->getPrize();
         $kilometers = $obj->getKilometers();
-        $color = $obj->getColors();
+        $color = $obj->getColor();
         $type = $obj->getType();
         $year = $obj->getYear();
         $power = $obj->getPower();

@@ -230,9 +230,9 @@ class Motos extends SellMotos {
             exit();
         }
 
-        $this->photo->setFrontalPhoto("../img/imgStore/".$valPF);
-        $this->photo->setLateralPhoto("../img/imgStore/".$valPL);
-        $this->photo->setFreePhoto("../img/imgStore/".$valPFree);
+        $this->photo->setFrontalPhoto("img/imgStore/".$valPF);
+        $this->photo->setLateralPhoto("img/imgStore/".$valPL);
+        $this->photo->setFreePhoto("img/imgStore/".$valPFree);
     }
 
     public function sellMValidation(){
