@@ -26,105 +26,108 @@ include "includes/navIndex.php";
             <option value="2">Venta de motos</option>
         </select>
     </div>
+    <div id="logInBox">
     <form class="" id="sellCar" name="sellCarForm" action="controller/carsController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="sellCarName">Modelo del coche: </label>
-            <input class="" id="" type="text" name="sellCName">
+            <input class="" id="" type="text" name="sellCName"><br><br><br>
         </div>
         <div class="">
             <label for="sellCarBrand">Marca del coche: </label>
-            <input class="" id="" type="text" name="sellCBrand">
+            <input class="" id="" type="text" name="sellCBrand"><br><br><br>
         </div>
         <div class="">
             <label for="sellCarPrice">Precio del coche: </label>
-            <input class="" id="" type="text" name="sellCPrice">
+            <input class="" id="" type="text" name="sellCPrice"><br><br><br>
         </div>
         <div class="">
             <label for="sellCarKilometers">Kilometraje del coche: </label>
-            <input class="" id="" type="text" name="sellCKilometers">
+            <input class="" id="" type="text" name="sellCKilometers"><br><br><br>
         </div>
         <div class="">
             <label for="sellCarColor">Color del coche: </label>
-            <input class="" id="" type="text" name="sellCColor">
+            <input class="" id="" type="text" name="sellCColor"><br><br><br>
         </div>
         <div class="">
             <label for="sellCarType">Tipo de coche: </label>
-            <input class="" id="" type="text" name="sellCType">
+            <input class="" id="" type="text" name="sellCType"><br><br><br>
         </div>
         <div class="">
             <label for="sellCarYear">Año del coche: </label>
-            <input class="" id="" type="text" name="sellCYear">
+            <input class="" id="" type="text" name="sellCYear"><br><br>
         </div>
         <div class="">
             <label for="sellCarPower">Potencia del coche: </label>
-            <input class="" id="" type="text" name="sellCPower">
+            <input class="" id="" type="text" name="sellCPower"><br><br>
         </div>
         <div class="">
             <label for="sellCarImagesF">Imagenes del coche (Vista Frontal): </label>
-            <input class="" id="" type="file" name="sellCImagesF">
+            <input class="" id="" type="file" name="sellCImagesF"><br><br>
         </div>
         <div class="">
             <label for="sellCarImagesLa">Imagenes del coche (Vista Lateral): </label>
-            <input class="" id="" type="file" name="sellCImagesLa">
+            <input class="" id="" type="file" name="sellCImagesLa"><br><br>
         </div>
         <div class="">
             <label for="sellCarImagesLi">Imagenes del coche (Libre): </label>
-            <input class="" id="" type="file" name="sellCImagesLi">
+            <input class="" id="" type="file" name="sellCImagesLi"><br><br>
         </div>
         <button type="button" class="" id="" onclick="validateC()">Enviar</button>
     </form>
-
+    </div>
+    <div id="logInBox">
     <form class="" id="sellMoto" name="sellMotoForm" action="controller/motosController.php" method="post" enctype="multipart/form-data">
         <div class="">
             <label for="sellMotoName">Modelo de la moto: </label>
-            <input class="" id="" type="text" name="sellMName">
+            <input class="" id="" type="text" name="sellMName"><br>
         </div>
         <div class="">
             <label for="sellMotoBrand">Marca de la moto: </label>
-            <input class="" id="" type="text" name="sellMBrand">
+            <input class="" id="" type="text" name="sellMBrand"><br>
         </div>
         <div class="">
             <label for="sellMotoPrice">Precio de la moto: </label>
-            <input class="" id="" type="text" name="sellMPrice">
+            <input class="" id="" type="text" name="sellMPrice"><br>
         </div>
         <div class="">
             <label for="sellMotoKilometers">Kilometraje de la moto: </label>
-            <input class="" id="" type="text" name="sellMKilometers">
+            <input class="" id="" type="text" name="sellMKilometers"><br>
         </div>
         <div class="">
             <label for="sellMotoColor">Color de la moto: </label>
-            <input class="" id="" type="text" name="sellMColor">
+            <input class="" id="" type="text" name="sellMColor"><br>
         </div>
         <div class="">
-            <label for="sellMotoType">Tipo de moto: </label>
-            <input class="" id="" type="text" name="sellMType">
+            <label for="sellMotoType">Tipo de moto: </label><br>
+            <input class="" id="" type="text" name="sellMType"><br>
         </div>
         <div class="">
             <label for="sellMotoYear">Año de la moto: </label>
-            <input class="" id="" type="text" name="sellMYear">
+            <input class="" id="" type="text" name="sellMYear"><br>
         </div>
         <div class="">
             <label for="sellMotoPower">Potencia de la moto: </label>
-            <input class="" id="" type="text" name="sellMPower">
-        </div>
+            <input class="" id="" type="text" name="sellMPower"><br>
+        </div><br>
         <div class="">
             <label for="sellMotoCC">Cilindrada de la moto: </label>
-            <input class="" id="" type="text" name="sellMCC">
+            <input class="" id="" type="text" name="sellMCC"><br>
         </div>
         <div class="">
             <label for="sellMotoImagesF">Imagenes de la moto (vista frontal): </label>
-            <input class="" id="" type="file" name="sellMImagesF">
+            <input class="" id="" type="file" name="sellMImagesF"><br>
         </div>
         <div class="">
             <label for="sellMotoImagesLa">Imagenes de la moto (vista lateral): </label>
-            <input class="" id="" type="file" name="sellMImagesLa">
+            <input class="" id="" type="file" name="sellMImagesLa"><br>
         </div>
         <div class="">
             <label for="sellMotoImagesLi">Imagenes de la moto (libre): </label>
-            <input class="" id="" type="file" name="sellMImagesLi">
+            <input class="" id="" type="file" name="sellMImagesLi"><br>
         </div>
         <button type="button" id="" class="" onclick="validateM()">Enviar</button>
     </form>
+    </div>
 </section>
 <?php
 include "includes/footer.php";
