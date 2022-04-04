@@ -9,6 +9,7 @@
     ?>
     <script src="js/carsValidations.js"></script>
     <script src="js/motosValidations.js"></script>
+    <script src="js/jsSelector.js"></script>
     <title>Vender</title>
 </head>
 <body>
