@@ -3,10 +3,10 @@
 
 
     function abrirNavMovil(){
-        document.getElementById("navMovil").style.width="100%";
+        document.getElementsByClassName("nav")[0].style.width="300px";
     }
     function cerrarNavMovil(){
-        document.getElementById("navMovil").style.width="0px";
+        document.getElementsByClassName("nav")[0].style.width="0";
 
     }
 </script>
@@ -34,8 +34,8 @@
             }
         ?>
     </div>
+
+</nav>
     <div id="navMovil">
         <span style="font-size: 30px;cursor: pointer" onclick="abrirNavMovil()"><img src="img/icons/navIcon.png" alt="IconoMenú" title="Icono Menú"></span>
     </div>
-
-</nav>
