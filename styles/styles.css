@@ -22,24 +22,9 @@ header{
     width: auto;
     display: flex;
 }
-body{
-    background-color: #38352d;
+#sellCar{
+    display: none;
 }
-/*Estilos comúnes movil*/
-@media only screen and (max-width: 450px){
-    .logo img{
-        width: 100%;
-
-    }
-}
-/*Estilos comúnes ordenador*/
-@media only screen and (min-width: 450px){
-
-    .logo img{
-        width: 500px;
-        text-align: center;
-    }
-
-
-
+#sellMoto{
+    display: none;
 }

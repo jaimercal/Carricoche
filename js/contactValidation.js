@@ -7,7 +7,7 @@ if (error === "emptyinput"){
     alert("El email ingresado no es válido");
 }
 /**
- * @author Jrc
+ * @author Jrc y MVF
  * @param email
  * @returns {boolean}
  */
@@ -23,7 +23,7 @@ function validateEmail(email){
 }
 
 /**
- * @author Jrc
+ * @author Jrc y MVF
  */
 function validateContact(){
     let email = document.forms['contactForm']['cEmail'].value;
