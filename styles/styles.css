@@ -165,12 +165,33 @@ section {
 body{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0 auto 1fr auto;
+    grid-template-rows: 0 auto 50px 1fr auto;
     grid-template-areas:
         "header header"
         "navIndex navIndex"
+        "navbuy navbuy"
         "section section"
         "footer footer";
+}
+body{
+    background-color: #717171;
+}
+
+.navBuy{
+    grid-area: navbuy;
+    background-color: #f1880f;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+
+}
+.navBuy div a{
+    font-weight: bold;
+    font-family: Algerian;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    color: #000;
 }
 .products{
     display: flex;
