@@ -22,61 +22,6 @@ include "includes/navBuy.php";
         $store = new Store();
         echo $store->printC();
         ?>
-        <div class="product">
-            <div class="imgP"><img src="" alt=""></div>
-            <div class="nameP"><h3></h3></div>
-            <div class="brandP"><h4></h4></div>
-            <div class="typeP"><h4></h4></div>
-            <div class="colorP"><h4></h4></div>
-            <div class="kmP"><h4></h4></div>
-            <div class="yearP"><h4></h4></div>
-            <div class="powerP"><h4></h4></div>
-            <div class="prizeP"><h3></h3></div>
-        </div>
-        <div class="product">
-            <div class="imgP"><img src="" alt=""></div>
-            <div class="nameP"><h3></h3></div>
-            <div class="brandP"><h4></h4></div>
-            <div class="typeP"><h4></h4></div>
-            <div class="colorP"><h4></h4></div>
-            <div class="kmP"><h4></h4></div>
-            <div class="yearP"><h4></h4></div>
-            <div class="powerP"><h4></h4></div>
-            <div class="prizeP"><h3></h3></div>
-        </div>
-        <div class="product">
-            <div class="imgP"><img src="" alt=""></div>
-            <div class="nameP"><h3></h3></div>
-            <div class="brandP"><h4></h4></div>
-            <div class="typeP"><h4></h4></div>
-            <div class="colorP"><h4></h4></div>
-            <div class="kmP"><h4></h4></div>
-            <div class="yearP"><h4></h4></div>
-            <div class="powerP"><h4></h4></div>
-            <div class="prizeP"><h3></h3></div>
-        </div>
-        <div class="product">
-            <div class="imgP"><img src="" alt=""></div>
-            <div class="nameP"><h3></h3></div>
-            <div class="brandP"><h4></h4></div>
-            <div class="typeP"><h4></h4></div>
-            <div class="colorP"><h4></h4></div>
-            <div class="kmP"><h4></h4></div>
-            <div class="yearP"><h4></h4></div>
-            <div class="powerP"><h4></h4></div>
-            <div class="prizeP"><h3></h3></div>
-        </div>
-        <div class="product">
-            <div class="imgP"><img src="" alt=""></div>
-            <div class="nameP"><h3></h3></div>
-            <div class="brandP"><h4></h4></div>
-            <div class="typeP"><h4></h4></div>
-            <div class="colorP"><h4></h4></div>
-            <div class="kmP"><h4></h4></div>
-            <div class="yearP"><h4></h4></div>
-            <div class="powerP"><h4></h4></div>
-            <div class="prizeP"><h3></h3></div>
-        </div>
     </div>
 </section>
 <?php

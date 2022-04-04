@@ -172,6 +172,47 @@ body{
         "section section"
         "footer footer";
 }
+.products{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+}
+.product{
+    color: #f2f2f2;
+    border: solid 1px #f2f2f2;
+    border-radius: 20px;
+    width: 500px;
+    margin: 15px 0;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+}
+.imgP{
+    text-align: center;
+}
+.imgP img{
+    width: 250px;
+    border-radius: 20px;
+}
+.textP{
+    display: flex;
+    flex-flow: column wrap;
+}
+.nameP{
+    font-size: 21px;
+    font-family: Arial;
+    text-align: center;
+    margin-top: 10px;
+}
+.atrP{
+    font-size: 15px;
+}
+.prizeP{
+    font-size: 21px;
+    text-align: right;
+    font-family: Arial;
+}
 
 /*
 Header

@@ -35,12 +35,12 @@ class Store {
         foreach ($cars as $car){
             $result .= "<div class='product'><div class='imgP'><img src='".$car->getFrontalPhoto()."'></div>";
             $result .= "<div class='nameP'><h3>".$car->getName()."</h3></div>";
-            $result .= "<div class='brandP'><h4>Marca: ".$car->getBrand()."</h4></div>";
-            $result .= "<div class='typeP'><h4>Tipo: ".$car->getType()."</h4></div>";
-            $result .= "<div class='colorP'><h4>Color: ".$car->getColor()."</h4></div>";
-            $result .= "<div class='kmP'><h4>Kilómetros: ".$car->getKilometers()."km</h4></div>";
-            $result .= "<div class='yearP'><h4>Año Matriculación: ".$car->getYear()."</h4></div>";
-            $result .= "<div class='powerP'><h4>Potencia: ".$car->getPower()."cv</h4></div>";
+            $result .= "<div class='textP'><div class='brandP atrP'><h4>Marca: ".$car->getBrand()."</h4></div>";
+            $result .= "<div class='typeP atrP'><h4>Tipo: ".$car->getType()."</h4></div>";
+            $result .= "<div class='colorP atrP'><h4>Color: ".$car->getColor()."</h4></div>";
+            $result .= "<div class='kmP atrP'><h4>Kilómetros: ".$car->getKilometers()."km</h4></div>";
+            $result .= "<div class='yearP atrP'><h4>Año Matriculación: ".$car->getYear()."</h4></div>";
+            $result .= "<div class='powerP atrP'><h4>Potencia: ".$car->getPower()."cv</h4></div></div>";
             $result .= "<div class='prizeP'><h3>Precio: ".$car->getPrize()."€</h3></div>";
             $result .= "</div>";
         }
@@ -53,13 +53,13 @@ class Store {
         foreach ($motos as $moto){
             $result .= "<div class='product'><div class='imgP'><img src='".$moto->getFrontalPhoto()."'></div>";
             $result .= "<div class='nameP'><h3>".$moto->getName()."</h3></div>";
-            $result .= "<div class='brandP'><h4>Marca: ".$moto->getBrand()."</h4></div>";
-            $result .= "<div class='typeP'><h4>Tipo: ".$moto->getType()."</h4></div>";
-            $result .= "<div class='colorP'><h4>Color: ".$moto->getColor()."</h4></div>";
-            $result .= "<div class='kmP'><h4>Kilómetros: ".$moto->getKilometers()."km</h4></div>";
-            $result .= "<div class='yearP'><h4>Año Matriculación: ".$moto->getYear()."</h4></div>";
-            $result .= "<div class='ccP'><h4>Cilindrada: ".$moto->getCc()."cc</h4></div>";
-            $result .= "<div class='powerP'><h4>Potencia: ".$moto->getPower()."cv</h4></div>";
+            $result .= "<div class='textP'><div class='brandP atrP'><h4>Marca: ".$moto->getBrand()."</h4></div>";
+            $result .= "<div class='typeP atrP'><h4>Tipo: ".$moto->getType()."</h4></div>";
+            $result .= "<div class='colorP atrP'><h4>Color: ".$moto->getColor()."</h4></div>";
+            $result .= "<div class='kmP atrP'><h4>Kilómetros: ".$moto->getKilometers()."km</h4></div>";
+            $result .= "<div class='yearP atrP'><h4>Año Matriculación: ".$moto->getYear()."</h4></div>";
+            $result .= "<div class='ccP atrP'><h4>Cilindrada: ".$moto->getCc()."cc</h4></div>";
+            $result .= "<div class='powerP atrP'><h4>Potencia: ".$moto->getPower()."cv</h4></div></div>";
             $result .= "<div class='prizeP'><h3>Precio: ".$moto->getPrize()."€</h3></div>";
             $result .= "</div>";
         }
