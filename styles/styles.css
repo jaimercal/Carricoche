@@ -5,6 +5,11 @@
 
 /*Estilos del slider*/
 
+.slideshow-container img{
+    width: 800px;
+    height: 650px;
+}
+
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
 .mySlides {display: none;}
@@ -79,33 +84,181 @@ header{
     margin: auto;
 }
 
-.nav{
-    width: auto;
+.nav div {
     background-color: #f1880f;
+    width: 100%;
+    display: inline-block;
+    padding-top: 10px;
+
+}
+.nav div a{
+    font-weight: bold;
+    font-family: Algerian;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 10px;
+    color: #000;
+}
+
+.nav{
+
+
+    width: 100%;
+
+    background-color: #6e5d5d;
+
 
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
+#navIndex{
+    grid-area: navIndex;
+    width: 100%;
+    height: auto;
+}
+
+#navMovil{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: stretch;
+    align-content: flex-start;
+}
+#navMovil span{
+    display: inline-block;
+    background-color: #f1880f;
+    border: 2px solid #0000;
+    margin: 8px 0 0 10px;
+    border-radius: 4px;
+    padding: 0 6px;
+}
+
+#navIndex #cerrarNavBar{
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    padding: 0 10px;
+}
+
+footer{
+    grid-area: footer;
+}
+
 .footerIcons{
     width: auto;
     display: flex;
 }
-body{
+section{
+    grid-area: section;
     background-color: #38352d;
+
+
 }
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0 auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "navIndex navIndex"
+        "section section"
+        "footer footer";
+}
+
+/*
+Header
+*/
+
+header{
+    grid-area: header;
+}
+
+#logInBox{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-flow: column wrap;
+
+    padding: 20%;
+}
+
+#logInBox form{
+    border: solid black 4px ;
+    padding: 100px;
+    border-radius: 30px;
+    background-color: #f1880f;
+}
+
+h2{
+    font-size: 36px;
+    color: #f2f2f2;
+}
+input{
+    justify-content: center;
+    border: solid black 4px;
+    border-radius: 10px;
+   width: 80%;
+}
+textarea{
+    justify-content: center;
+    border: solid black 4px;
+    border-radius: 10px;
+    width: 80%;
+}
+button{
+    margin-left: 100px;
+    margin-top: 10px;
+    padding: 2px;
+    border: solid black 4px;
+    border-radius: 10px;
+}
+
+
 /*Estilos comúnes movil*/
 @media only screen and (max-width: 450px){
-    .logo img{
-        width: 100%;
+
+    nav{
+        height: 20px;
+
+    }
+    .nav div{
+        display: none;
+    }
+
+    .navIndexIcon{
+
+        width: auto;
+        background-color: #f1880f;
+
+        display: flex;
+        flex-wrap: nowrap;
 
     }
 }
 /*Estilos comúnes ordenador*/
 @media only screen and (min-width: 450px){
 
-    .logo img{
-        width: 500px;
+
+
+    .navIndexIcon{
+        display: none;
+    }
+
+
+    .home img{
+        width: 200px;
         text-align: center;
+    }
+
+    #navMovil span{
+        display: none;
+    }
+
+    #navIndex #cerrarNavBar{
+       display: none;
     }
 
 

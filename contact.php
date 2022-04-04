@@ -16,17 +16,20 @@ include "includes/header.php";
 include "includes/navIndex.php";
 ?>
 <section>
-    <form class="" name="contactForm" action="controller/contactController.php" method="post" enctype="multipart/form-data">
+    <div id="logInBox">
+        <h2>Contactenos</h2>
+    <form id="contactForm" class="" name="contactForm" action="controller/contactController.php" method="post" enctype="multipart/form-data">
         <div class="">
-            <label for="contactEmail">Email:</label>
+            <label for="contactEmail">Correo electronico:</label><br>
             <input class="" id="" type="text" name="cEmail">
         </div>
         <div class="">
-            <label for="contactCommentary">Comentario:</label>
+            <label for="contactCommentary">Comentario del cliente:</label><br>
             <textarea name="cCommentary" class="" id="" cols="30" rows="10"></textarea>
         </div>
         <button type="button" class="" id="" onclick="validateContact()">Enviar</button>
     </form>
+    </div>
 </section>
 <?php
 include "includes/footer.php";

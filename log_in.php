@@ -16,17 +16,20 @@ include "includes/header.php";
 include "includes/navIndex.php";
 ?>
 <section>
-    <form class="" name="loginForm" action="controller/loginController.php" method="post" enctype="multipart/form-data">
+    <div id="logInBox">
+        <h2>Inicie sesion</h2>
+    <form id="loginForm" class="" name="loginForm" action="controller/loginController.php" method="post" enctype="multipart/form-data">
         <div class="">
-            <label for="loginUsername"></label>
-            <input class="" id="" type="text" name="lRegister">
+            <label for="loginUsername">Nombre de Usuario</label><br>
+            <input class="" id="" type="text" name="lRegister" >
         </div>
         <div class="">
-            <label for="loginPassword"></label>
-            <input class="" id="" type="password" name="lPassword">
+            <label for="loginPassword">Contraseña</label><br>
+            <input class="" id="" type="password" name="lPassword" >
         </div>
-        <button type="button" class="" id="" onclick="validateLogin()">Enviar</button>
+        <button type="button" class="" id="" onclick="validateLogin()">Entrar</button>
     </form>
+    </div>
 </section>
 <?php
 include "includes/footer.php";

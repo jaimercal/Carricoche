@@ -1,13 +1,28 @@
 
-<nav class="navIndex">
-    <div class="navIndexIcon"><img src="img/icons/navIcon.png" alt="IconoMenú" title="Icono Menú"></div>
+<script>
+
+
+    function abrirNavMovil(){
+        document.getElementById("navMovil").style.width="100%";
+    }
+    function cerrarNavMovil(){
+        document.getElementById("navMovil").style.width="0px";
+
+    }
+</script>
+
+
+<nav id="navIndex">
+    <div id="cerrarNavBar" href="javascript:void(0)" onclick="cerrarNavMovil()">
+       x
+    </div>
+
+
     <div class="nav">
-        <div class="home"><a href="index.php">Inicio</a></div>
-        <div class="news"><a href="news.php">Novedades</a></div>
+
+        <div class="home"><a href="index.php"><img src="img/logos/LogoSinFondo.png" alt="LogoCarricoche" title="Logo de la empresa"></a></div>
         <div class="buy"><a href="buy.php">Comprar</a></div>
         <div class="sell"><a href="sell.php">Vender</a></div>
-        <div class="lastdays"><a href="lastdays.php">LastDays</a></div>
-        <div class="maintenance"><a href="mainteinance.php">Mantenimiento</a></div>
         <div class="contact"><a href="contact.php">Contacto</a></div>
         <?php
             if(isset($_SESSION['username'])){
@@ -19,4 +34,8 @@
             }
         ?>
     </div>
+    <div id="navMovil">
+        <span style="font-size: 30px;cursor: pointer" onclick="abrirNavMovil()"><img src="img/icons/navIcon.png" alt="IconoMenú" title="Icono Menú"></span>
+    </div>
+
 </nav>

@@ -17,26 +17,26 @@ include "includes/navIndex.php";
 ?>
 <section>
     <h2>BIENVENIDO</h2>
-    <p>Compra venta de vehiculos de segunda mano</p>
+    <p>The Besto web de compra venta de vehiculos de segunda mano</p>
 
     <div class="slideshow-container">
 
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="img/imgSlider/lateral.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
+            <img src="img/imgSlider/kirbyn.jpg" style="width:100%">
+            <div class="text">Esto es de Fran</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="img/imgSlider/frontal.jpg" style="width:100%">
-            <div class="text">Caption Two</div>
+            <img src="img/imgSlider/02.jpg" style="width:100%">
+            <div class="text">Esto es de Gabriel</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="img/imgSlider/libre.jpg" style="width:100%">
-            <div class="text">Caption Three</div>
+            <img src="img/imgSlider/miku.jpg" style="width:100%">
+            <div class="text">Esto es de Jaime</div>
         </div>
 
     </div>
@@ -51,5 +51,6 @@ include "includes/navIndex.php";
 <?php
 include "includes/footer.php";
 ?>
+<script src="js/scripts.js"></script>
 </body>
 </html>
