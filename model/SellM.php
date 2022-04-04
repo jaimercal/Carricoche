@@ -1,6 +1,6 @@
 <?php
 
-require "Db.php";
+require_once "Db.php";
 class SellM extends Db {
     /**
      * @author Jrc y MVF
@@ -30,17 +30,14 @@ class SellM extends Db {
         $connection->close();
     }
 
-    public function existingMoto($sold){
+    public function existingMoto(){
         $db = new Db();
         $connection = $db->connect();
-        $stmt = $connection->prepare("select * from bikes where sold = ?;");
-        $stmt->bind_param("i", $sold);
-        $stmt->execute();
-        $resultData = $stmt->get_result();
-        if($array = $resultData->fetch_assoc()){
-            return $array;
+        $stmt = $connection->query("select name, brand, prize, kilometers, color, type, year, power,cc,frontalPhoto,lateralPhoto,freePhoto from bikes where sold = 0;");
+        if($array = $stmt->fetch_all(ARRAY_FILTER_USE_BOTH)){
+            $result = $array;
         }else{
-            $result = false;
+            $result = array();
         }
         $stmt->close();
         $connection->close();

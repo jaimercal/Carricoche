@@ -1,6 +1,6 @@
 <?php
 
-require "Db.php";
+require_once "Db.php";
 class SellC extends Db {
     /**
      * @author Jrc y MVF
@@ -16,7 +16,7 @@ class SellC extends Db {
         $brand = $obj->getBrand();
         $price = $obj->getPrize();
         $kilometers = $obj->getKilometers();
-        $color = $obj->getColors();
+        $color = $obj->getColor();
         $type = $obj->getType();
         $year = $obj->getYear();
         $power = $obj->getPower();
@@ -29,17 +29,14 @@ class SellC extends Db {
         $connection->close();
     }
 
-    public function existingCar($sold){
+    public function existingCar(){
         $db = new Db();
         $connection = $db->connect();
-        $stmt = $connection->prepare("select * from cars where sold = ?;");
-        $stmt->bind_param("i", $sold);
-        $stmt->execute();
-        $resultData = $stmt->get_result();
-        if($array = $resultData->fetch_assoc()){
-            return $array;
+        $stmt = $connection->query("select name, brand, prize, kilometers, color, type, year, power,frontalPhoto,lateralPhoto,freePhoto from cars where sold = 0;");
+        if($array = $stmt->fetch_all(ARRAY_FILTER_USE_BOTH)){
+            $result = $array;
         }else{
-            $result = false;
+            $result = array();
         }
         $stmt->close();
         $connection->close();

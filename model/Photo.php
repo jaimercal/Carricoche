@@ -67,10 +67,10 @@ class Photo {
         $tamano = $archivoFoto['size'];
         //Valido que el formato de imagen sea un jpeg o un png
         if((strpos($tipo, "jpeg") || strpos($tipo, "png")) && $tamano < $tamanoMaxArchivo ){
-            $nombreArchivo = limpiar_caracteres_especiales($nombreArchivo);
+            $nombreArchivo = $this->limpiar_caracteres_especiales($nombreArchivo);
             // reviso si ya existe algun archivo con el mismo nombre en la carpeta.
             if(file_exists($carpeta.$nombreArchivo)){
-                $nombreCortado = cortarCadenaFinal($nombreArchivo);
+                $nombreCortado = $this->cortarCadenaFinal($nombreArchivo);
                 $numeroAletario = time();
                 if(strpos($tipo, "jpeg")){
                     $extension = ".jpg";

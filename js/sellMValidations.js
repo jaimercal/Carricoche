@@ -1,9 +1,3 @@
-if (error === "emptyinput") {
-    alert("Debes llenar todos los campos");
-}else if (error === "notloged"){
-    alert("Debes iniciar sesion");
-}
-
 function validateM(){
     let name = document.forms['sellMotoForm']['sellMName'].value;
     let brand = document.forms['sellMotoForm']['sellMBrand'].value;
