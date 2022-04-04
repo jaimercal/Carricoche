@@ -1,6 +1,7 @@
 <?php
 
 require "SellM.php";
+require "Products.php";
 
 class SellMVal extends SellM {
 
@@ -13,6 +14,7 @@ class SellMVal extends SellM {
     private $year;
     private $power;
     private $cc;
+    private $photo;
 
     /**
      * @author Jrc y MVF
@@ -27,7 +29,7 @@ class SellMVal extends SellM {
      * @param $cc
      */
 
-    public function __construct($name, $brand, $prize, $kilometers, $color, $type, $year, $power, $cc) {
+    public function __construct($name, $brand, $prize, $kilometers, $color, $type, $year, $power, $cc, $photo) {
         $this->name = $name;
         $this->brand = $brand;
         $this->prize = $prize;
@@ -37,6 +39,7 @@ class SellMVal extends SellM {
         $this->year = $year;
         $this->power = $power;
         $this->cc = $cc;
+        $this->photo = $photo;
     }
 
 
@@ -195,7 +198,41 @@ class SellMVal extends SellM {
         }else if(empty($this->cc)){
             header("location: ../sell.php?error=emptyinput");
             exit();
+        }else if(empty($this->photo->getFrontalPhoto())){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->photo->getLateralPhoto())){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if(empty($this->photo->getFreePhoto())){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
         }
+    }
+
+    public function photosM(){
+        $photoF = $this->photo->getFrontalPhoto();
+        $photoL = $this->photo->getLateralPhoto();
+        $photoFree = $this->photo->getFreePhoto();
+
+        $valPF = $this->photo->subirFoto($photoF);
+        $valPL = $this->photo->subirFoto($photoL);
+        $valPFree = $this->photo->subirFoto($photoFree);
+
+        if($valPF==null){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if($valPL==null){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }else if($valPFree==null){
+            header("location: ../sell.php?error=emptyinput");
+            exit();
+        }
+
+        $this->photo->setFrontalPhoto("../img/imgStore/".$valPF);
+        $this->photo->setLateralPhoto("../img/imgStore/".$valPL);
+        $this->photo->setFreePhoto("../img/imgStore/".$valPFree);
     }
 
     public function sellMValidation(){
@@ -204,7 +241,10 @@ class SellMVal extends SellM {
             header("location: ../sell.php?error=notloged");
             exit();
         }
-        $this->insert($this);
+        $this->photosM();
+        $this->insert($this, $this->photo);
     }
+
+
 
 }

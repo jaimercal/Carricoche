@@ -14,6 +14,9 @@ function validateM(){
     let year = document.forms['sellMotoForm']['sellMYear'].value;
     let power = document.forms['sellMotoForm']['sellMPower'].value;
     let cc = document.forms['sellMotoForm']['sellMCC'].value;
+    let frontalPhoto = document.forms['sellMotoForm']['sellMImagesF'].value;
+    let lateralPhoto = document.forms['sellMotoForm']['sellMImagesLa'].value;
+    let freePhoto = document.forms['sellMotoForm']['sellMImagesLi'].value;
     let valid = true;
 
     if(name==null || name==""){
@@ -52,6 +55,18 @@ function validateM(){
         valid = false;
         console.log("Error cc vacio");
         alert("Debes introducir la cilindrada de la moto");
+    }else if(freePhoto==null || freePhoto==""){
+        valid = false;
+        console.log("Error foto vacia");
+        alert("Debes introducir las fotos indicadas");
+    }else if(frontalPhoto==null || frontalPhoto==""){
+        valid = false;
+        console.log("Error foto vacia");
+        alert("Debes introducir las fotos indicadas");
+    }else if(lateralPhoto==null || lateralPhoto==""){
+        valid = false;
+        console.log("Error foto vacia");
+        alert("Debes introducir las fotos indicadas");
     }
     if(valid==true){
         document.sellMotoForm.submit();

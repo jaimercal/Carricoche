@@ -1,9 +1,67 @@
 <?php
 
 class Photo {
+    private $frontalPhoto;
+    private $lateralPhoto;
+    private $freePhoto;
 
-    function subirFoto($archivoFoto,$carpeta,$tamanoMaxArchivo = 5000000){
-        $ruta = "../img/imgAnuncios";
+    /**
+     * @param $frontalPhoto
+     * @param $lateralPhoto
+     * @param $freePhoto
+     */
+    public function __construct($frontalPhoto, $lateralPhoto, $freePhoto) {
+        $this->frontalPhoto = $frontalPhoto;
+        $this->lateralPhoto = $lateralPhoto;
+        $this->freePhoto = $freePhoto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFrontalPhoto() {
+        return $this->frontalPhoto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLateralPhoto() {
+        return $this->lateralPhoto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFreePhoto() {
+        return $this->freePhoto;
+    }
+
+    /**
+     * @param mixed $frontalPhoto
+     */
+    public function setFrontalPhoto($frontalPhoto) {
+        $this->frontalPhoto = $frontalPhoto;
+    }
+
+    /**
+     * @param mixed $lateralPhoto
+     */
+    public function setLateralPhoto($lateralPhoto) {
+        $this->lateralPhoto = $lateralPhoto;
+    }
+
+    /**
+     * @param mixed $freePhoto
+     */
+    public function setFreePhoto($freePhoto) {
+        $this->freePhoto = $freePhoto;
+    }
+
+    public function subirFoto($archivoFoto){
+        $tamanoMaxArchivo = 5000000;
+        $carpeta = "../img/imgStore/";
+        $ruta = "";
         $nombreArchivo = $archivoFoto['name'];
         $tipo = $archivoFoto['type'];
         $tamano = $archivoFoto['size'];
@@ -32,7 +90,7 @@ class Photo {
         }
         return $ruta;
     }
-    function limpiar_caracteres_especiales($cadena) {
+    public function limpiar_caracteres_especiales($cadena) {
         //preg_replace($patrones, $sustituciones, $cadena);
         //$cadena =  preg_replace("/[^a-zA-Z0-9\_\-]+/", "",$cadena);
         //IMPORTANTE
@@ -77,7 +135,7 @@ class Photo {
 //$archivo = str_replace("caracter-que-queremos-cambiar","caracter-por-el-cual-lo-vamos-a-cambiar",$archivo);
         return $cadena;
     }
-    function cortarCadenaFinal($cadena, $caracter = "."){
+    public function cortarCadenaFinal($cadena, $caracter = "."){
 // localicamos en que posición se haya la $subcadena, en nuestro caso la posicion es "7"
         $posicionsubcadena = strrpos ($cadena, $caracter);
 // eliminamos los caracteres desde $subcadena hacia la izq, y le sumamos 1 para borrar tambien el @ en este caso

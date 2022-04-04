@@ -7,11 +7,11 @@ class SellC extends Db {
      * @param $obj
      * @return void
      */
-    protected function insert($obj){
+    protected function insert($obj, $obj2){
         $db = new Db();
         $connection = $db->connect();
-        $stmt = $connection->prepare("insert into cars (name,brand,prize,kilometers,color,type,year,power,sold) values (?,?,?,?,?,?,?,?,?);");
-        $stmt->bind_param("ssddsssii", $name, $brand, $price, $kilometers, $color, $type, $year, $power, $sold);
+        $stmt = $connection->prepare("insert into cars (name,brand,prize,kilometers,color,type,year,power,sold,frontalPhoto,lateralPhoto,freePhoto) values (?,?,?,?,?,?,?,?,?,?,?,?);");
+        $stmt->bind_param("ssddsssiisss", $name, $brand, $price, $kilometers, $color, $type, $year, $power, $sold, $photoF, $photoL, $photoFree);
         $name = $obj->getName();
         $brand = $obj->getBrand();
         $price = $obj->getPrize();
@@ -20,13 +20,16 @@ class SellC extends Db {
         $type = $obj->getType();
         $year = $obj->getYear();
         $power = $obj->getPower();
+        $photoF = $obj2->getFrontalPhoto();
+        $photoL = $obj2->getLateralPhoto();
+        $photoFree = $obj2->getFreePhoto();
         $sold = 0;
         $stmt->execute();
         $stmt->close();
         $connection->close();
     }
 
-    protected function existingCar($sold){
+    public function existingCar($sold){
         $db = new Db();
         $connection = $db->connect();
         $stmt = $connection->prepare("select * from cars where sold = ?;");

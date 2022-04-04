@@ -16,6 +16,9 @@ function validateC(){
     let type = document.forms['sellCarForm']['sellCType'].value;
     let year = document.forms['sellCarForm']['sellCYear'].value;
     let power = document.forms['sellCarForm']['sellCPower'].value;
+    let frontalPhoto = document.forms['sellCarForm']['sellCImagesF'].value;
+    let lateralPhoto = document.forms['sellCarForm']['sellCImagesLa'].value;
+    let freePhoto = document.forms['sellCarForm']['sellCImagesLi'].value;
     let valid = true;
 
     if(name==null || name==""){
@@ -50,6 +53,18 @@ function validateC(){
         valid = false;
         console.log("Error power vacio");
         alert("Debes introducir la potencia del coche");
+    }else if(freePhoto==null || freePhoto==""){
+        valid = false;
+        console.log("Error foto vacia");
+        alert("Debes introducir las fotos indicadas");
+    }else if(frontalPhoto==null || frontalPhoto==""){
+        valid = false;
+        console.log("Error foto vacia");
+        alert("Debes introducir las fotos indicadas");
+    }else if(lateralPhoto==null || lateralPhoto==""){
+        valid = false;
+        console.log("Error foto vacia");
+        alert("Debes introducir las fotos indicadas");
     }
     if(valid==true){
         document.sellCarForm.submit();
