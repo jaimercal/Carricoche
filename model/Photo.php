@@ -58,88 +58,88 @@ class Photo {
         $this->freePhoto = $freePhoto;
     }
 
-    public function subirFoto($archivoFoto){
-        $tamanoMaxArchivo = 5000000;
-        $carpeta = "../img/imgStore/";
-        $ruta = "";
-        $nombreArchivo = $archivoFoto['name'];
-        $tipo = $archivoFoto['type'];
-        $tamano = $archivoFoto['size'];
+    public function uploadPhoto($file){
+        $maxFileSize = 5000000;
+        $folder = "../img/imgStore/";
+        $route = "";
+        $fileName = $file['name'];
+        $fileType = $file['type'];
+        $size = $file['size'];
         //Valido que el formato de imagen sea un jpeg o un png
-        if((strpos($tipo, "jpeg") || strpos($tipo, "png")) && $tamano < $tamanoMaxArchivo ){
-            $nombreArchivo = $this->limpiar_caracteres_especiales($nombreArchivo);
+        if((strpos($fileType, "jpeg") || strpos($fileType, "png")) && $size < $maxFileSize ){
+            $fileName = $this->clearSpChar($fileName);
             // reviso si ya existe algun archivo con el mismo nombre en la carpeta.
-            if(file_exists($carpeta.$nombreArchivo)){
-                $nombreCortado = $this->cortarCadenaFinal($nombreArchivo);
-                $numeroAletario = time();
-                if(strpos($tipo, "jpeg")){
+            if(file_exists($folder.$fileName)){
+                $cutName = $this->cutString($fileName);
+                $random = time();
+                if(strpos($fileType, "jpeg")){
                     $extension = ".jpg";
                 }else{
                     $extension = ".png";
                 }
-                $nombreArchivo = $nombreCortado."_".$numeroAletario.$extension;
+                $fileName = $cutName."_".$random.$extension;
             }
-            if(move_uploaded_file($archivoFoto['tmp_name'], $carpeta.$nombreArchivo)){
-                $ruta = $nombreArchivo;
+            if(move_uploaded_file($file['tmp_name'], $folder.$fileName)){
+                $route = $fileName;
             }else{
                 echo "<script>alert('No se ha podido guardar el archivo. Contacte con el administrador')</script>";
             }
         }else{
             echo "<script>alert('No es un formato de imagen permitido o tiene un tamaño superior al permitido')</script>";
-            $ruta = null;
+            $route = null;
         }
-        return $ruta;
+        return $route;
     }
-    public function limpiar_caracteres_especiales($cadena) {
+    public function clearSpChar($charString) {
         //preg_replace($patrones, $sustituciones, $cadena);
         //$cadena =  preg_replace("/[^a-zA-Z0-9\_\-]+/", "",$cadena);
         //IMPORTANTE
-        $cadena = utf8_decode($cadena);
-        $cadena = str_replace(
+        $charString = utf8_decode($charString);
+        $charString = str_replace(
             array('?', '¿'),
             array('_', '_'),
-            $cadena
+            $charString
         );
-        $cadena = str_replace(
+        $charString = str_replace(
             array(' '),
             array('_'),
-            $cadena
+            $charString
         );
-        $cadena = str_replace(
+        $charString = str_replace(
             array('á', 'à', 'ä', 'â', 'ª', 'Á', 'À', 'Â', 'Ä'),
             array('a', 'a', 'a', 'a', 'a', 'A', 'A', 'A', 'A'),
-            $cadena
+            $charString
         );
-        $cadena = str_replace(
+        $charString = str_replace(
             array('é', 'è', 'ë', 'ê', 'É', 'È', 'Ê', 'Ë'),
             array('e', 'e', 'e', 'e', 'E', 'E', 'E', 'E'),
-            $cadena );
-        $cadena = str_replace(
+            $charString );
+        $charString = str_replace(
             array('í', 'ì', 'ï', 'î', 'Í', 'Ì', 'Ï', 'Î'),
             array('i', 'i', 'i', 'i', 'I', 'I', 'I', 'I'),
-            $cadena );
-        $cadena = str_replace(
+            $charString );
+        $charString = str_replace(
             array('ó', 'ò', 'ö', 'ô', 'Ó', 'Ò', 'Ö', 'Ô'),
             array('o', 'o', 'o', 'o', 'O', 'O', 'O', 'O'),
-            $cadena );
-        $cadena = str_replace(
+            $charString );
+        $charString = str_replace(
             array('ú', 'ù', 'ü', 'û', 'Ú', 'Ù', 'Û', 'Ü'),
             array('u', 'u', 'u', 'u', 'U', 'U', 'U', 'U'),
-            $cadena );
-        $cadena = str_replace(
+            $charString );
+        $charString = str_replace(
             array('ñ', 'Ñ', 'ç', 'Ç'),
             array('n', 'N', 'c', 'C'),
-            $cadena
+            $charString
         );
 //para ampliar los caracteres a reemplazar agregar lineas de este tipo:
 //$archivo = str_replace("caracter-que-queremos-cambiar","caracter-por-el-cual-lo-vamos-a-cambiar",$archivo);
-        return $cadena;
+        return $charString;
     }
-    public function cortarCadenaFinal($cadena, $caracter = "."){
+    public function cutString($charString, $character = "."){
 // localicamos en que posición se haya la $subcadena, en nuestro caso la posicion es "7"
-        $posicionsubcadena = strrpos ($cadena, $caracter);
+        $stringPos = strrpos ($charString, $character);
 // eliminamos los caracteres desde $subcadena hacia la izq, y le sumamos 1 para borrar tambien el @ en este caso
-        $nombre = substr ($cadena, 0, ($posicionsubcadena));
-        return $nombre;
+        $name = substr ($charString, 0, ($stringPos));
+        return $name;
     }
 }

@@ -215,9 +215,9 @@ class Motos extends SellMotos {
         $photoL = $this->photo->getLateralPhoto();
         $photoFree = $this->photo->getFreePhoto();
 
-        $valPF = $this->photo->subirFoto($photoF);
-        $valPL = $this->photo->subirFoto($photoL);
-        $valPFree = $this->photo->subirFoto($photoFree);
+        $valPF = $this->photo->uploadPhoto($photoF);
+        $valPL = $this->photo->uploadPhoto($photoL);
+        $valPFree = $this->photo->uploadPhoto($photoFree);
 
         if($valPF==null){
             header("location: ../sell.php?error=emptyinput");
