@@ -60,35 +60,35 @@ class Photo {
 
     public function uploadPhoto($file){
         $maxFileSize = 5000000;
-        $folder = "../img/imgStore/";
-        $route = "";
+        $fileFolder = "../img/imgStore/";
+        $fileRoute = "";
         $fileName = $file['name'];
         $fileType = $file['type'];
-        $size = $file['size'];
+        $fileSize = $file['size'];
         //Valido que el formato de imagen sea un jpeg o un png
-        if((strpos($fileType, "jpeg") || strpos($fileType, "png")) && $size < $maxFileSize ){
+        if((strpos($fileType, "jpeg") || strpos($fileType, "png")) && $fileSize < $maxFileSize ){
             $fileName = $this->clearSpChar($fileName);
             // reviso si ya existe algun archivo con el mismo nombre en la carpeta.
-            if(file_exists($folder.$fileName)){
+            if(file_exists($fileFolder.$fileName)){
                 $cutName = $this->cutString($fileName);
-                $random = time();
+                $randomN = time();
                 if(strpos($fileType, "jpeg")){
                     $extension = ".jpg";
                 }else{
                     $extension = ".png";
                 }
-                $fileName = $cutName."_".$random.$extension;
+                $fileName = $cutName."_".$randomN.$extension;
             }
-            if(move_uploaded_file($file['tmp_name'], $folder.$fileName)){
-                $route = $fileName;
+            if(move_uploaded_file($file['tmp_name'], $fileFolder.$fileName)){
+                $fileRoute = $fileName;
             }else{
                 echo "<script>alert('No se ha podido guardar el archivo. Contacte con el administrador')</script>";
             }
         }else{
             echo "<script>alert('No es un formato de imagen permitido o tiene un tamaño superior al permitido')</script>";
-            $route = null;
+            $fileRoute = null;
         }
-        return $route;
+        return $fileRoute;
     }
     public function clearSpChar($charString) {
         //preg_replace($patrones, $sustituciones, $cadena);
